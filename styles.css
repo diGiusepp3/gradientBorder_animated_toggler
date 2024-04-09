@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+$purple: #361043;
+$mediumblue: #16165D;
+$darkblue: #110D18;
+
+.fira-sans-thin {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.fira-sans-extralight {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.fira-sans-light {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.fira-sans-regular {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fira-sans-medium {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.fira-sans-semibold {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.fira-sans-bold {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.fira-sans-extrabold {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.fira-sans-black {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.fira-sans-thin-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.fira-sans-extralight-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.fira-sans-light-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.fira-sans-regular-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.fira-sans-medium-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.fira-sans-semibold-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.fira-sans-bold-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.fira-sans-extrabold-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.fira-sans-black-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+.theme-dark {
+  background: linear-gradient(to bottom right, $purple, $darkblue);
+  color: white;
+}
+
+.theme-light {
+  color: black;
+  background: linear-gradient(to bottom right, $purple, white);
+
+}
+
+/*_____________________________________________MAIN__________________________________*/
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Plaatst de elementen zo ver mogelijk uit elkaar */
+  align-items: center; /* Centreert de items verticaal */
+  max-height: 5em;
+  img {
+    height: 4em;
+    margin: auto;
+  }
+
+  .navbar-toggler{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 1em;
+    width: 2em;
+    height: 2em;
+    background: #010002;
+    border-radius: 5px;
+
+  }
+
+  .navbar-toggler:before,
+  .navbar-toggler:after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
+    background-size: 400% 400%;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 5px;
+    z-index: -1;
+    animation: animate 10s ease alternate infinite;
+  }
+  .navbar-toggler:after{
+    filter: blur(20px);
+    border-radius: 5px;
+  }
+  @keyframes animate{
+    0%{
+      background-position: 0 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.theme-selector {
+  display: flex;
+  align-items: center; /* Centreert de iconen verticaal */
+  i {
+    margin-left: 10px; /* Voegt wat ruimte toe tussen de iconen */
+  }
+}
+
