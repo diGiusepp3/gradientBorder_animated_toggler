@@ -30,3 +30,53 @@
         <i class="bi bi-chevron-double-down"></i>
     </div>
 </header>
+
+<script>
+    function setDarkTheme() {
+        document.body.classList.add('theme-dark');
+        document.body.classList.remove('theme-light');
+        setCookie('theme', 'dark', 365);
+    }
+
+    function setLightTheme() {
+        document.body.classList.add('theme-light');
+        document.body.classList.remove('theme-dark');
+        setCookie('theme', 'light', 365);
+    }
+
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            setDarkTheme();
+        } else if (theme === 'light') {
+            setLightTheme();
+        }
+    }
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    window.onload = function() {
+        var theme = getCookie('theme');
+        if (theme) {
+            setTheme(theme);
+        }
+    }
+
+    // Functie om de waarde van een cookie op te halen
+    function getCookie(name) {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.indexOf(name) === 0) {
+                return cookie.substring(name.length + 1);
+            }
+        }
+        return null;
+    }
+</script>    
